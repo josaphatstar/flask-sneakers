@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Page d'Administration{% endblock%}
+
+{% block navbar %}
+<div class="d-flex align-items-center justify-content-end mr-5">
+    <div class="ml-5">
+        <a href="/connexion"><button type="button" class="btn btn-danger">Connexion</button></a>
+    </div>
+</div>
+{% endblock%}
+
+
+{% block content %}
+<h1>Modifier Produit</h1>
+
+    <form action="{{ url_for('modifier_produit', produit_id=produit.id) }}" method="POST">
+        <div class="form-group">
+            <label for="code">Code:</label>
+            <input type="text" id="code" name="code" value="{{ produit.code }}">
+        </div>
+        <div class="form-group">
+            <label for="marque">Marque:</label>
+            <input type="text" id="marque" name="marque" value="{{ produit.marque }}">
+        </div>
+        <div class="form-group">
+            <label for="modele">Modèle:</label>
+            <input type="text" id="modele" name="modele" value="{{ produit.modele }}">
+        </div>
+        <div class="form-group">
+            <label for="coloris">Coloris:</label>
+            <input type="text" id="coloris" name="coloris" value="{{ produit.coloris }}">
+        </div>
+        <div class="form-group">
+            <label for="prix">Prix:</label>
+            <input type="text" id="prix" name="prix" value="{{ produit.prix }}">
+        </div>
+        <button type="submit">Enregistrer les modifications</button>
+    </form>
+{% endblock%}

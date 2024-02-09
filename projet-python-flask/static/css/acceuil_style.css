@@ -1,0 +1,52 @@
+/* Styles pour la vitrine de produits */
+
+body{
+    background-color:red;
+}
+.container {
+    margin-top: 30px;
+    
+}
+
+.card {
+    margin-bottom: 30px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease;
+  
+}
+
+.card:hover {
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.1);
+}
+
+.card-img-top {
+    height: 300px; /* Hauteur souhaitée pour les images */
+    width: 100%;
+    object-fit: contain; /* Redimensionner pour contenir l'image */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+
+.card-body {
+    padding: 20px;
+   
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #666;
+}
+
+@media (max-width: 767.98px) {
+    .card-img-top {
+        height: 200px;
+    }
+}

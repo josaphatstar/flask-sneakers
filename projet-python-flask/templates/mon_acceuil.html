@@ -1,0 +1,317 @@
+{% extends "base.html" %}
+{% block title %}Page Acceuil{% endblock%}
+
+
+{% block navbar %}
+<div class="d-flex align-items-center justify-content-end mr-5">
+    <img src="/static/images/user-regular.svg" style="width: 25px; height: 25px;"> Hey, {{g.user.username}}
+    <div class="ml-3 mr-5">
+        <a href="/panier"><div class="ml-3 text-danger"><img src="/static/images/shopping-cart-solid.svg" style="width: 25px; height: 25px;"> {{listPanier|length}} Article(s)</div></a>
+    </div>
+    <div class="ml-5">
+        <a href="/deconnexion"><button type="button" class="btn btn-danger">Connexion</button></a>
+    </div>
+</div>
+{% endblock%}
+
+
+
+{% block content %}
+
+<style>
+
+.container {
+    margin-top: 30px;
+    
+   
+    width: 100%;
+    
+}
+
+.card {
+    margin-bottom: 30px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease;
+    width: 50vh;
+  
+  
+}
+
+.card:hover {
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.1);
+}
+
+.card-img-top {
+    height: 300px; /* Hauteur souhaitée pour les images */
+    width: 100%;
+    object-fit: contain; /* Redimensionner pour contenir l'image */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+
+.card-body {
+    padding: 20px;
+   
+}
+.row{
+   
+    width: 100%;
+    height: auto;
+    display: flex;
+
+   
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #666;
+}
+
+@media (max-width: 767.98px) {
+    .card-img-top {
+        height: 200px;
+    }
+}
+
+
+</style>
+
+</div><div class="container">
+    <h3>Nos Sneakers</h3>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <img src="/static/images/produits/chaussures-baskets-mode_1203-7529.avif" class="card-img-top" alt="Sneaker 1">
+                <div class="card-body">
+                    <h5 class="card-title">Nom du produit 1</h5>
+                    <p class="card-text">Description du produit 1.</p>
+                </div>
+            </div>
+        </div>
+       
+        <div class="col-md-4">
+            <div class="card">
+                <img src="/static/images/produits/istockphoto-1132357230-612x612.jpg" class="card-img-top" alt="Sneaker 2">
+                <div class="card-body">
+                    <h5 class="card-title">Nom du produit 3</h5>
+                    <p class="card-text">Description du produit 3.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Ajoutez d'autres blocs de carte pour plus de produits -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="/static/images/produits/baskets-montantes-blanches-mode-chaussures-unisexes_53876-106036.avif " class="card-img-top" alt="Sneaker 2">
+                <div class="card-body">
+                    <h5 class="card-title">Nom du produit 2</h5>
+                    <p class="card-text">Description du produit 2.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="/static/images/produits/bottes-noires-lacets-decontractes-baskets-noires_1017677-14075.jpg " class="card-img-top" alt="Sneaker 3">
+                <div class="card-body">
+                    <h5 class="card-title">Nom du produit 3</h5>
+                    <p class="card-text">Description du produit 3.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="/static/images/produits/istockphoto-1284957327-612x612.jpg" class="card-img-top" alt="Sneaker 4">
+                <div class="card-body">
+                    <h5 class="card-title">Nom du produit 4</h5>
+                    <p class="card-text">Description du produit 4.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="/static/images/produits/istockphoto-1436061654-612x612.jpg" class="card-img-top" alt="Sneaker 7">
+                <div class="card-body">
+                    <h5 class="card-title">Nom du produit 7</h5>
+                    <p class="card-text">Description du produit 7.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="/static/images/produits/istockphoto-486381684-612x612.jpg" class="card-img-top" alt="Sneaker 7">
+                <div class="card-body">
+                    <h5 class="card-title">Nom du produit 7</h5>
+                    <p class="card-text">Description du produit 7.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="/static/images/produits/istockphoto-1139069354-612x612.jpg" class="card-img-top" alt="Sneaker 7">
+                <div class="card-body">
+                    <h5 class="card-title">Nom du produit 7</h5>
+                    <p class="card-text">Description du produit 7.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="/static/images/produits/istockphoto-184860913-612x612.jpg" class="card-img-top" alt="Sneaker 7">
+                <div class="card-body">
+                    <h5 class="card-title">Nom du produit 7</h5>
+                    <p class="card-text">Description du produit 7.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="/static/images/produits/istockphoto-520838835-612x612.jpg" class="card-img-top" alt="Sneaker 7">
+                <div class="card-body">
+                    <h5 class="card-title">Nom du produit 7</h5>
+                    <p class="card-text">Description du produit 7.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="/static/images/produits/istockphoto-1459334683-612x612.jpg" class="card-img-top" alt="Sneaker 7">
+                <div class="card-body">
+                    <h5 class="card-title">Nom du produit 7</h5>
+                    <p class="card-text">Description du produit 7.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="/static/images/produits/istockphoto-1655126091-612x612.jpg" class="card-img-top" alt="Sneaker 7">
+                <div class="card-body">
+                    <h5 class="card-title">Nom du produit 7</h5>
+                    <p class="card-text">Description du produit 7.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="/static/images/produits/é.jpg" class="card-img-top" alt="Sneaker 7">
+                <div class="card-body">
+                    <h5 class="card-title">Nom du produit 7</h5>
+                    <p class="card-text">Description du produit 7.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="/static/images/produits/istockphoto-1480789347-612x612.jpg" class="card-img-top" alt="Sneaker 7">
+                <div class="card-body">
+                    <h5 class="card-title">Nom du produit 7</h5>
+                    <p class="card-text">Description du produit 7.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="/static/images/produits/istockphoto-854538908-612x612.jpg" class="card-img-top" alt="Sneaker 7">
+                <div class="card-body">
+                    <h5 class="card-title">Nom du produit 7</h5>
+                    <p class="card-text">Description du produit 7.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="/static/images/produits/istockphoto-1414981882-612x612.jpg" class="card-img-top" alt="Sneaker 7">
+                <div class="card-body">
+                    <h5 class="card-title">Nom du produit 7</h5>
+                    <p class="card-text">Description du produit 7.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="/static/images/produits/istockphoto-1218665717-612x612.jpg" class="card-img-top" alt="Sneaker 7">
+                <div class="card-body">
+                    <h5 class="card-title">Nom du produit 7</h5>
+                    <p class="card-text">Description du produit 7.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="/static/images/produits/istockphoto-481214127-612x612.jpg" class="card-img-top" alt="Sneaker 7">
+                <div class="card-body">
+                    <h5 class="card-title">Nom du produit 7</h5>
+                    <p class="card-text">Description du produit 7.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="/static/images/produits/istockphoto-1305322609-612x612.jpg" class="card-img-top" alt="Sneaker 7">
+                <div class="card-body">
+                    <h5 class="card-title">Nom du produit 7</h5>
+                    <p class="card-text">Description du produit 7.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="/static/images/produits/istockphoto-1404641362-612x612.jpg" class="card-img-top" alt="Sneaker 7">
+                <div class="card-body">
+                    <h5 class="card-title">Nom du produit 7</h5>
+                    <p class="card-text">Description du produit 7.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="/static/images/produits/istockphoto-493187140-612x612.jpg" class="card-img-top" alt="Sneaker 7">
+                <div class="card-body">
+                    <h5 class="card-title">Nom du produit 7</h5>
+                    <p class="card-text">Description du produit 7.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="/static/images/produits/istockphoto-1387094988-612x612.jpg" class="card-img-top" alt="Sneaker 7">
+                <div class="card-body">
+                    <h5 class="card-title">Nom du produit 7</h5>
+                    <p class="card-text">Description du produit 7.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="/static/images/produits/istockphoto-1892673682-612x612.jpg" class="card-img-top" alt="Sneaker 7">
+                <div class="card-body">
+                    <h5 class="card-title">Nom du produit 7</h5>
+                    <p class="card-text">Description du produit 7.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="/static/images/produits/istockphoto-1372927081-612x612.jpg" class="card-img-top" alt="Sneaker 7">
+                <div class="card-body">
+                    <h5 class="card-title">Nom du produit 7</h5>
+                    <p class="card-text">Description du produit 7.</p>
+                </div>
+            </div>
+        </div>
+</div>
+</div>
+
+
+{% endblock%}
+
+
+
+
+

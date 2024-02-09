@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+{% block title %}Page d'Administration{% endblock%}
+
+
+
+{% block navbar %}
+<div class="d-flex align-items-center justify-content-end mr-5">
+    <div class="ml-5">
+        <a href="/connexion"><button type="button" class="btn btn-danger">Connexion</button></a>
+    </div>
+</div>
+
+{% endblock%}
+
+
+
+{% block content %}
+
+<style>
+
+/* Styles pour la page d'administration */
+
+/* Style pour le bouton de connexion */
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Style pour le bouton "Ajouter un produit" */
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Style pour le titre de la page */
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Style pour le tableau */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Style pour l'image du produit */
+table img {
+    max-width: 100px;
+    height: auto;
+}
+
+/* Style pour les liens "Modifier" */
+a {
+    color: #007bff;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+/* Style pour le bouton "Supprimer" */
+button[type="submit"] {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+    
+</style>
+<a href="{{ url_for('admin') }}"><button type="button" class="btn btn-primary">Ajouter un produit</button></a>
+    <h1>Page d'administration</h1>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Code</th>
+            <th>Marque</th>
+            <th>Modèle</th>
+            <th>Coloris</th>
+            <th>Prix</th>
+            <th>Image</th>
+            <th>Action</th>
+        </tr>
+        {% for produit in listProduits %}
+        <tr>
+            <td>{{ produit.id }}</td>
+            <td>{{ produit.code }}</td>
+            <td>{{ produit.marque }}</td>
+            <td>{{ produit.modele }}</td>
+            <td>{{ produit.coloris }}</td>
+            <td>{{ produit.prix }}</td>
+            <td><img src="{{ url_for('static', filename='images/produits/' + produit.image)}}" alt="{{ produit.code }}" style="width:100px;"></td>
+
+            <td>
+                <form action="{{ url_for('supprimer_produit') }}" method="post">
+                    <input type="hidden" name="produit_id" value="{{ produit.id }}">
+                    <button type="submit">Supprimer</button>
+                </form>
+                
+                <a href="{{ url_for('modifier_produit', produit_id=produit.id) }}">Modifier</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</html>
+{% endblock %}

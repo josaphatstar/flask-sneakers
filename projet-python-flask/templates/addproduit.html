@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Page d'Administration{% endblock%}
+
+{% block navbar %}
+<div class="d-flex align-items-center justify-content-end mr-5">
+    <div class="ml-5">
+        <a href="/connexion"><button type="button" class="btn btn-danger">Connexion</button></a>
+    </div>
+</div>
+{% endblock%}
+
+
+{% block content %}
+
+<link type="text/css" rel="stylesheet" href="static/css/style_connexion.css">
+
+<div class="container">
+                <form action="{{url_for('traitement_admin')}}" method="POST">
+                    <h2 class="text-center">Ajouter un produit</h2>
+                    <div class="form-group">
+                        <input type="text" name="id" class="form-control" placeholder="id" required="required">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="code" class="form-control" placeholder="code" required="required">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="marque" class="form-control" placeholder="marque" required="required">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="modele" class="form-control" placeholder="modele" required="required">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="coloris" class="form-control" placeholder="coloris" required="required">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="prix" class="form-control" placeholder="prix" required="required">
+                    </div>
+                    <div class="form-group">
+                        <input type="file" name="image" class="form-control" placeholder="image" required="required">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Ajouter</button>
+                    </div>        
+                </form>
+</div>
+{% endblock%}
